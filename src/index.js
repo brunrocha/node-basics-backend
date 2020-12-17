@@ -1,7 +1,10 @@
 const express = require("express");
+const cors = require("cors");
 const { uuid, isUuid } = require("uuidv4");
 
 const app = express();
+
+app.use(cors());
 app.use(express.json());
 
 const projects = [];
@@ -84,5 +87,5 @@ app.delete("/projects/:id", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("😊 Back-end started!");
+  console.log("Back-end started!");
 });
